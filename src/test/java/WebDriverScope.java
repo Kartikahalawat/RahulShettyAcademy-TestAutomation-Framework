@@ -24,5 +24,11 @@ public class WebDriverScope {
             columnDriver.findElements(By.tagName("a")).get(i).sendKeys(clickOnLinkTab);
         }
 
+        //Getting title of each page opened in new tab
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            System.out.println(driver.getTitle());
+        }
+
     }
 }
